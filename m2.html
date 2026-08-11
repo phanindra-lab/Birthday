@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+   content="width=device-width,
+            initial-scale=1.0,
+            maximum-scale=1.0,
+            user-scalable=no">
+
+<meta name="theme-color" content="#16001f">
+
+<title>Manaswi ❤️ A Birthday Surprise</title>
+
+<style>
+
+/* =========================================================
+   BASIC
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background: #050008;
+    color: white;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   INTRO SCREEN
+========================================================= */
+
+#intro {
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #43004f 0%,
+            #19001f 45%,
+            #020003 100%
+        );
+
+    transition:
+        opacity 1s ease;
+
+}
+
+.intro-content {
+
+    width: 100%;
+    max-width: 650px;
+
+    animation:
+        introAppear
+        1.5s ease;
+
+}
+
+.intro-small {
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: #f2b8ff;
+
+    margin-bottom: 25px;
+
+}
+
+.intro-title {
+
+    font-size:
+        clamp(
+            40px,
+            10vw,
+            75px
+        );
+
+    line-height: 1.1;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 10px white,
+
+        0 0 25px #ff69d4,
+
+        0 0 60px #a338ff;
+
+    margin-bottom: 40px;
+
+}
+
+.start-button {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    border: none;
+
+    outline: none;
+
+    padding:
+        17px 38px;
+
+    min-width: 200px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4fa3,
+            #803cff
+        );
+
+    box-shadow:
+
+        0 0 20px
+        rgba(255,80,180,.5),
+
+        0 0 50px
+        rgba(130,50,255,.35);
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+
+}
+
+.start-button:active {
+
+    transform:
+        scale(.94);
+
+}
+
+@keyframes introAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.8);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+#countdown {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 900;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #020003;
+
+}
+
+.count-number {
+
+    font-family: Arial, sans-serif;
+
+    font-size:
+        min(
+            42vw,
+            240px
+        );
+
+    font-weight: 900;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 15px white,
+
+        0 0 40px #ff45d0,
+
+        0 0 100px #8738ff;
+
+    animation:
+        countdownPop
+        .9s
+        ease
+        forwards;
+
+}
+
+@keyframes countdownPop {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(.2);
+
+    }
+
+    30% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.15);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+#main {
+
+    display: none;
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    padding:
+        30px 15px 80px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            #72165f,
+            transparent 38%
+        ),
+
+        linear-gradient(
+            180deg,
+            #16001f,
+            #3b083e 50%,
+            #100013
+        );
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+
+    position: relative;
+
+    z-index: 20;
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+}
+
+
+/* =========================================================
+   BIRTHDAY TITLE
+========================================================= */
+
+.birthday {
+
+    text-align: center;
+
+    padding-top: 40px;
+
+    animation:
+        birthdayAppear
+        1.6s ease;
+
+}
+
+.birthday h1 {
+
+    margin: 0;
+
+    font-size:
+        clamp(
+            42px,
+            11vw,
+            95px
+        );
+
+    line-height: 1;
+
+    color: #fff1a3;
+
+    text-shadow:
+
+        0 0 10px white,
+
+        0 0 25px #ffd700,
+
+        0 0 55px #ff61ba,
+
+        0 0 100px #ff1493;
+
+    animation:
+        birthdayGlow
+        1.5s infinite alternate;
+
+}
+
+.birthday p {
+
+    margin-top: 22px;
+
+    font-size: 19px;
+
+    color: #ffe2f2;
+
+}
+
+@keyframes birthdayAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(70px)
+            scale(.75);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+@keyframes birthdayGlow {
+
+    from {
+
+        filter:
+            brightness(1);
+
+    }
+
+    to {
+
+        filter:
+            brightness(1.35);
+
+    }
+
+}
+
+
+/* =========================================================
+   MESSAGE CARD
+========================================================= */
+
+.card {
+
+    margin-top: 40px;
+
+    padding:
+        30px 25px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .09
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            .22
+        );
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,.45),
+
+        inset 0 0 30px
+        rgba(255,255,255,.03);
+
+    animation:
+        cardAppear
+        2s ease;
+
+}
+
+.message {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #fff;
+
+}
+
+.message p {
+
+    margin:
+        0 0 25px;
+
+}
+
+
+/* =========================================================
+   GIFT CARDS
+========================================================= */
+
+.gift {
+
+    padding: 21px;
+
+    margin:
+        18px 0;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.14),
+            rgba(255,255,255,.04)
+        );
+
+    border-left:
+        4px solid #ffd45c;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.15);
+
+    transition:
+        transform .3s ease;
+
+}
+
+.gift:active {
+
+    transform:
+        scale(.98);
+
+}
+
+.gift-title {
+
+    color: #ffe27a;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+.closing {
+
+    text-align: center;
+
+    margin-top: 35px;
+
+    color: #ffe7a1;
+
+    font-size: 20px;
+
+}
+
+.heart {
+
+    text-align: center;
+
+    font-size: 55px;
+
+    margin-top: 20px;
+
+    animation:
+        heartbeat
+        1.3s infinite;
+
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.18);
+
+    }
+
+}
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(80px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   BALLOONS
+========================================================= */
+
+.balloon {
+
+    position: fixed;
+
+    bottom: -130px;
+
+    width: 50px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    z-index: 5;
+
+    opacity: .9;
+
+    pointer-events: none;
+
+    animation:
+        balloonUp
+        15s linear infinite;
+
+}
+
+.balloon::before {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -6px;
+
+    left: 20px;
+
+    width: 10px;
+
+    height: 10px;
+
+    background: inherit;
+
+    transform:
+        rotate(45deg);
+
+}
+
+.balloon::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 64px;
+
+    left: 50%;
+
+    width: 1px;
+
+    height: 100px;
+
+    background:
+        rgba(255,255,255,.65);
+
+}
+
+.b1 {
+
+    left: 4%;
+
+    background: #ff4d6d;
+
+    animation-duration: 14s;
+
+}
+
+.b2 {
+
+    left: 20%;
+
+    background: #ffd166;
+
+    animation-duration: 17s;
+
+    animation-delay: 2s;
+
+}
+
+.b3 {
+
+    left: 38%;
+
+    background: #06d6a0;
+
+    animation-duration: 15s;
+
+    animation-delay: 4s;
+
+}
+
+.b4 {
+
+    left: 58%;
+
+    background: #4cc9f0;
+
+    animation-duration: 18s;
+
+    animation-delay: 1s;
+
+}
+
+.b5 {
+
+    left: 76%;
+
+    background: #c77dff;
+
+    animation-duration: 16s;
+
+    animation-delay: 3s;
+
+}
+
+.b6 {
+
+    left: 90%;
+
+    background: #ff85a1;
+
+    animation-duration: 19s;
+
+    animation-delay: 5s;
+
+}
+
+@keyframes balloonUp {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-55vh)
+            rotate(5deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-125vh)
+            rotate(-5deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   GLITTER
+========================================================= */
+
+.glitter {
+
+    position: fixed;
+
+    width: 4px;
+
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    z-index: 30;
+
+    pointer-events: none;
+
+    box-shadow:
+
+        0 0 7px white,
+
+        0 0 17px #ffd700;
+
+    animation:
+        sparkle
+        1.5s infinite;
+
+}
+
+@keyframes sparkle {
+
+    0%,100% {
+
+        opacity: 0;
+
+        transform:
+            scale(0);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.6);
+
+    }
+
+}
+
+
+/* =========================================================
+   FIREWORKS
+========================================================= */
+
+.firework {
+
+    position: fixed;
+
+    width: 4px;
+
+    height: 4px;
+
+    border-radius: 50%;
+
+    z-index: 50;
+
+    pointer-events: none;
+
+}
+
+.spark {
+
+    position: absolute;
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px currentColor;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px) {
+
+    .card {
+
+        padding:
+            25px 18px;
+
+    }
+
+    .message {
+
+        font-size: 16px;
+
+        line-height: 1.75;
+
+    }
+
+    .gift {
+
+        padding: 17px;
+
+    }
+
+    .balloon {
+
+        width: 38px;
+
+        height: 52px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<div id="intro">
+
+```
+<div class="intro-content">
+
+    <div class="intro-small">
+        JUST FOR YOU ❤️
+    </div>
+
+    <div class="intro-title">
+        I have a surprise<br>
+        for you…
+    </div>
+
+    <button
+        id="startButton"
+        class="start-button">
+
+        ✨ I'm Ready ✨
+
+    </button>
+
+</div>
+```
+
+</div>
+
+<!-- =====================================================
+     COUNTDOWN
+===================================================== -->
+
+<div id="countdown">
+
+```
+<div
+    id="countNumber"
+    class="count-number">
+
+    3
+
+</div>
+```
+
+</div>
+
+<!-- =====================================================
+     MAIN PAGE
+===================================================== -->
+
+<div id="main">
+
+```
+<!-- BALLOONS -->
+
+<div class="balloon b1"></div>
+<div class="balloon b2"></div>
+<div class="balloon b3"></div>
+<div class="balloon b4"></div>
+<div class="balloon b5"></div>
+<div class="balloon b6"></div>
+
+
+<div class="content">
+
+
+    <!-- BIRTHDAY TITLE -->
+
+    <div class="birthday">
+
+        <h1>
+            🎂 Happy Birthday! 🎉
+        </h1>
+
+        <p>
+            To my beautiful Manaswi ❤️
+        </p>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+
+    <div class="card">
+
+        <div class="message">
+
+
+            <p>
+                Manaswi, You manage to make everyday brighter and warmer.
+                I put together this gift hamper with a lot of thought,
+                choosing pieces that I hope will add a little joy to your
+                special day.
+            </p>
+
+
+            <p>
+                Since I couldn't be there to celebrate with you in person
+                today, I wanted you to remember that my thoughts are always
+                with you, right there.
+            </p>
+
+
+            <div class="gift">
+
+                <div class="gift-title">
+                    ☕ Personalized Floral Travel Mug
+                </div>
+
+                A practical companion for your busy days and morning
+                routines. Every time you hold it, I hope it reminds you
+                that my thoughts are always traveling right alongside you.
+
+            </div>
+
+
+            <div class="gift">
+
+                <div class="gift-title">
+                    🌻 Crochet Sunflower Pot
+                </div>
+
+                Sunflowers naturally turn toward warmth and light.
+                This everlasting flower is a little reminder of the
+                constant brightness and grace you bring into my life—a
+                bloom that will never fade.
+
+            </div>
+
+
+            <div class="gift">
+
+                <div class="gift-title">
+                    🕯️ Set of 4 Scented Glass Candles
+                </div>
+
+                Four colors and fragrances to bring warmth, peace,
+                focus, and comfort into your room whenever you light
+                them at the end of the day.
+
+            </div>
+
+
+            <p>
+                Thank you for being such an extraordinary person,
+                and my future wife :). Wishing you the happiest
+                and most blessed year ahead. I can't wait until we
+                celebrate properly together!
+            </p>
+
+
+            <div class="closing">
+
+                May this year bring you everything
+                your heart deserves. ✨
+
+            </div>
+
+
+            <div class="heart">
+                ❤️
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+```
+
+</div>
+
+<script>
+
+/* =========================================================
+   START SEQUENCE
+========================================================= */
+
+let started = false;
+
+document
+.getElementById("startButton")
+.addEventListener("click", function() {
+
+    if (started) return;
+
+    started = true;
+
+    /*
+       IMPORTANT:
+       Music starts directly from the button click.
+       This gives iPhone/Android permission to play audio.
+    */
+
+    startBirthdayMusic();
+
+    runSurprise();
+
+});
+
+
+/* =========================================================
+   SURPRISE
+========================================================= */
+
+function runSurprise() {
+
+    const intro =
+        document.getElementById("intro");
+
+
+    intro.style.opacity = "0";
+
+
+    setTimeout(function() {
+
+        intro.style.display =
+            "none";
+
+        countdown();
+
+    }, 800);
+
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+function countdown() {
+
+    const screen =
+        document.getElementById("countdown");
+
+    const number =
+        document.getElementById("countNumber");
+
+
+    screen.style.display =
+        "flex";
+
+
+    let n = 3;
+
+
+    function next() {
+
+        number.textContent = n;
+
+
+        number.style.animation =
+            "none";
+
+        void number.offsetWidth;
+
+
+        number.style.animation =
+            "countdownPop .9s ease forwards";
+
+
+        if (n === 0) {
+
+            setTimeout(
+                revealBirthday,
+                700
+            );
+
+            return;
+
+        }
+
+
+        n--;
+
+
+        setTimeout(
+            next,
+            1000
+        );
+
+    }
+
+
+    next();
+
+}
+
+
+/* =========================================================
+   REVEAL BIRTHDAY
+========================================================= */
+
+function revealBirthday() {
+
+    document
+    .getElementById("countdown")
+    .style.display = "none";
+
+
+    document
+    .getElementById("main")
+    .style.display = "block";
+
+
+    /*
+       Massive glitter burst.
+    */
+
+    for (
+        let i = 0;
+        i < 180;
+        i++
+    ) {
+
+        setTimeout(
+            createGlitter,
+            i * 10
+        );
+
+    }
+
+
+    /*
+       Initial fireworks.
+    */
+
+    for (
+        let i = 0;
+        i < 18;
+        i++
+    ) {
+
+        setTimeout(
+            function() {
+
+                createFirework(
+
+                    Math.random() *
+                    window.innerWidth,
+
+                    80 +
+                    Math.random() *
+                    window.innerHeight *
+                    .45
+
+                );
+
+            },
+            i * 220
+        );
+
+    }
+
+
+    /*
+       Continuous fireworks.
+    */
+
+    setInterval(
+        function() {
+
+            createFirework(
+
+                Math.random() *
+                window.innerWidth,
+
+                80 +
+                Math.random() *
+                window.innerHeight *
+                .45
+
+            );
+
+        },
+        2300
+    );
+
+
+    /*
+       Continuous glitter.
+    */
+
+    setInterval(
+        createGlitter,
+        130
+    );
+
+}
+
+
+/* =========================================================
+   GLITTER
+========================================================= */
+
+function createGlitter() {
+
+    const glitter =
+        document.createElement(
+            "div"
+        );
+
+
+    glitter.className =
+        "glitter";
+
+
+    glitter.style.left =
+        Math.random() * 100 +
+        "vw";
+
+
+    glitter.style.top =
+        Math.random() * 100 +
+        "vh";
+
+
+    const size =
+        2 +
+        Math.random() * 5;
+
+
+    glitter.style.width =
+        size + "px";
+
+
+    glitter.style.height =
+        size + "px";
+
+
+    glitter.style.animationDelay =
+        Math.random() * 1.5 +
+        "s";
+
+
+    document.body.appendChild(
+        glitter
+    );
+
+
+    setTimeout(
+        function() {
+
+            glitter.remove();
+
+        },
+        3000
+    );
+
+}
+
+
+/* =========================================================
+   FIREWORK
+========================================================= */
+
+function createFirework(x, y) {
+
+    const container =
+        document.createElement(
+            "div"
+        );
+
+
+    container.className =
+        "firework";
+
+
+    container.style.left =
+        x + "px";
+
+
+    container.style.top =
+        y + "px";
+
+
+    document.body.appendChild(
+        container
+    );
+
+
+    const colors = [
+
+        "#ff4d6d",
+        "#ffd166",
+        "#06d6a0",
+        "#4cc9f0",
+        "#c77dff",
+        "#ffffff",
+        "#ff9f1c"
+
+    ];
+
+
+    const color =
+        colors[
+            Math.floor(
+                Math.random() *
+                colors.length
+            )
+        ];
+
+
+    for (
+        let i = 0;
+        i < 45;
+        i++
+    ) {
+
+        const spark =
+            document.createElement(
+                "div"
+            );
+
+
+        spark.className =
+            "spark";
+
+
+        spark.style.background =
+            color;
+
+
+        spark.style.color =
+            color;
+
+
+        container.appendChild(
+            spark
+        );
+
+
+        const angle =
+            Math.PI * 2 * i / 45;
+
+
+        const distance =
+            70 +
+            Math.random() * 170;
+
+
+        const x2 =
+            Math.cos(angle) *
+            distance;
+
+
+        const y2 =
+            Math.sin(angle) *
+            distance;
+
+
+        spark.animate(
+
+            [
+
+                {
+                    transform:
+                        "translate(0,0)",
+
+                    opacity: 1
+
+                },
+
+                {
+
+                    transform:
+                        "translate(" +
+                        x2 +
+                        "px," +
+                        y2 +
+                        "px)",
+
+                    opacity: 0
+
+                }
+
+            ],
+
+            {
+
+                duration:
+                    900 +
+                    Math.random() * 700,
+
+                easing:
+                    "cubic-bezier(.1,.8,.3,1)"
+
+            }
+
+        );
+
+    }
+
+
+    setTimeout(
+        function() {
+
+            container.remove();
+
+        },
+        2200
+    );
+
+}
+
+
+/* =========================================================
+   🎵 CHEERFUL & ENERGETIC BIRTHDAY MUSIC
+========================================================= */
+
+let birthdayAudio = null;
+
+let birthdayMusicPlaying = false;
+
+let birthdayMusicTimer = null;
+
+
+/* Musical frequencies */
+
+const NOTES = {
+
+    C4: 261.63,
+    D4: 293.66,
+    E4: 329.63,
+    F4: 349.23,
+    G4: 392.00,
+    A4: 440.00,
+    B4: 493.88,
+
+    C5: 523.25,
+    D5: 587.33,
+    E5: 659.25,
+    F5: 698.46,
+    G5: 783.99,
+    A5: 880.00
+
+};
+
+
+/* =========================================================
+   START MUSIC
+========================================================= */
+
+function startBirthdayMusic() {
+
+    try {
+
+        if (birthdayMusicPlaying) {
+            return;
+        }
+
+
+        const AudioContext =
+            window.AudioContext ||
+            window.webkitAudioContext;
+
+
+        if (!AudioContext) {
+
+            console.log(
+                "Web Audio unsupported."
+            );
+
+            return;
+
+        }
+
+
+        birthdayAudio =
+            new AudioContext();
+
+
+        /*
+           Resume immediately after
+           user's button tap.
+        */
+
+        if (
+            birthdayAudio.state ===
+            "suspended"
+        ) {
+
+            birthdayAudio
+            .resume()
+            .catch(
+                function() {}
+            );
+
+        }
+
+
+        birthdayMusicPlaying =
+            true;
+
+
+        playBirthdaySong();
+
+    }
+
+    catch(error) {
+
+        console.log(
+            "Music error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   PLAY TONE
+========================================================= */
+
+function playTone(
+    frequency,
+    start,
+    duration,
+    volume,
+    type
+) {
+
+    try {
+
+        const oscillator =
+            birthdayAudio
+            .createOscillator();
+
+
+        const gain =
+            birthdayAudio
+            .createGain();
+
+
+        oscillator.type =
+            type || "sine";
+
+
+        oscillator.frequency
+        .setValueAtTime(
+            frequency,
+            start
+        );
+
+
+        gain.gain
+        .setValueAtTime(
+            0.0001,
+            start
+        );
+
+
+        gain.gain
+        .exponentialRampToValueAtTime(
+            volume,
+            start + .025
+        );
+
+
+        gain.gain
+        .exponentialRampToValueAtTime(
+            0.0001,
+            start + duration
+        );
+
+
+        oscillator.connect(
+            gain
+        );
+
+
+        gain.connect(
+            birthdayAudio
+            .destination
+        );
+
+
+        oscillator.start(
+            start
+        );
+
+
+        oscillator.stop(
+            start +
+            duration +
+            .05
+        );
+
+    }
+
+    catch(error) {}
+
+}
+
+
+/* =========================================================
+   BASS
+========================================================= */
+
+function playBass(
+    frequency,
+    start,
+    duration
+) {
+
+    playTone(
+        frequency,
+        start,
+        duration,
+        .08,
+        "triangle"
+    );
+
+}
+
+
+/* =========================================================
+   CHORD
+========================================================= */
+
+function playChord(
+    frequencies,
+    start,
+    duration
+) {
+
+    frequencies.forEach(
+        function(freq) {
+
+            playTone(
+                freq,
+                start,
+                duration,
+                .035,
+                "sine"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   KICK
+========================================================= */
+
+function kick(start) {
+
+    try {
+
+        const oscillator =
+            birthdayAudio
+            .createOscillator();
+
+
+        const gain =
+            birthdayAudio
+            .createGain();
+
+
+        oscillator.type =
+            "sine";
+
+
+        oscillator.frequency
+        .setValueAtTime(
+            120,
+            start
+        );
+
+
+        oscillator.frequency
+        .exponentialRampToValueAtTime(
+            45,
+            start + .12
+        );
+
+
+        gain.gain
+        .setValueAtTime(
+            .18,
+            start
+        );
+
+
+        gain.gain
+        .exponentialRampToValueAtTime(
+            .001,
+            start + .15
+        );
+
+
+        oscillator.connect(
+            gain
+        );
+
+
+        gain.connect(
+            birthdayAudio
+            .destination
+        );
+
+
+        oscillator.start(
+            start
+        );
+
+
+        oscillator.stop(
+            start + .16
+        );
+
+    }
+
+    catch(error) {}
+
+}
+
+
+/* =========================================================
+   CLAP
+========================================================= */
+
+function clap(start) {
+
+    try {
+
+        const buffer =
+            birthdayAudio
+            .createBuffer(
+                1,
+                birthdayAudio.sampleRate * .12,
+                birthdayAudio.sampleRate
+            );
+
+
+        const data =
+            buffer.getChannelData(0);
+
+
+        for (
+            let i = 0;
+            i < data.length;
+            i++
+        ) {
+
+            data[i] =
+                (
+                    Math.random() * 2 - 1
+                ) *
+                Math.pow(
+                    1 -
+                    i / data.length,
+                    4
+                );
+
+        }
+
+
+        const source =
+            birthdayAudio
+            .createBufferSource();
+
+
+        const gain =
+            birthdayAudio
+            .createGain();
+
+
+        source.buffer =
+            buffer;
+
+
+        gain.gain.value =
+            .07;
+
+
+        source.connect(
+            gain
+        );
+
+
+        gain.connect(
+            birthdayAudio
+            .destination
+        );
+
+
+        source.start(
+            start
+        );
+
+    }
+
+    catch(error) {}
+
+}
+
+
+/* =========================================================
+   PLAY SONG
+========================================================= */
+
+function playBirthdaySong() {
+
+    if (
+        !birthdayAudio ||
+        !birthdayMusicPlaying
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+       Happy Birthday melody.
+       Faster tempo for a cheerful feel.
+    */
+
+    const melody = [
+
+        [NOTES.G4,.28],
+        [NOTES.G4,.28],
+        [NOTES.A4,.50],
+        [NOTES.G4,.50],
+        [NOTES.C5,.50],
+        [NOTES.B4,.75],
+
+        [NOTES.G4,.28],
+        [NOTES.G4,.28],
+        [NOTES.A4,.50],
+        [NOTES.G4,.50],
+        [NOTES.D5,.50],
+        [NOTES.C5,.75],
+
+        [NOTES.G4,.28],
+        [NOTES.G4,.28],
+        [NOTES.G5,.50],
+        [NOTES.E5,.50],
+        [NOTES.C5,.50],
+        [NOTES.B4,.50],
+        [NOTES.A4,.75],
+
+        [NOTES.F5,.28],
+        [NOTES.F5,.28],
+        [NOTES.E5,.50],
+        [NOTES.C5,.50],
+        [NOTES.D5,.50],
+        [NOTES.C5,.90]
+
+    ];
+
+
+    /*
+       Bright major chords.
+    */
+
+    const chords = [
+
+        [
+            NOTES.C4,
+            NOTES.E4,
+            NOTES.G4
+        ],
+
+        [
+            NOTES.G4,
+            NOTES.B4,
+            NOTES.D5
+        ],
+
+        [
+            NOTES.C4,
+            NOTES.E4,
+            NOTES.G4
+        ],
+
+        [
+            NOTES.F4,
+            NOTES.A4,
+            NOTES.C5
+        ],
+
+        [
+            NOTES.C4,
+            NOTES.E4,
+            NOTES.G4
+        ],
+
+        [
+            NOTES.G4,
+            NOTES.B4,
+            NOTES.D5
+        ],
+
+        [
+            NOTES.F4,
+            NOTES.A4,
+            NOTES.C5
+        ],
+
+        [
+            NOTES.G4,
+            NOTES.B4,
+            NOTES.D5
+        ]
+
+    ];
+
+
+    let time =
+        birthdayAudio
+        .currentTime +
+        .08;
+
+
+    /*
+       Melody.
+    */
+
+    melody.forEach(
+        function(item) {
+
+            playTone(
+                item[0],
+                time,
+                item[1],
+                .13,
+                "sine"
+            );
+
+
+            /*
+               Sparkly octave.
+            */
+
+            if (
+                item[0] <= NOTES.C5
+            ) {
+
+                playTone(
+                    item[0] * 2,
+                    time,
+                    item[1] * .8,
+                    .025,
+                    "triangle"
+                );
+
+            }
+
+
+            time +=
+                item[1] +
+                .035;
+
+        }
+    );
+
+
+    /*
+       Chords.
+    */
+
+    let chordTime =
+        birthdayAudio
+        .currentTime +
+        .08;
+
+
+    chords.forEach(
+        function(chord) {
+
+            playChord(
+                chord,
+                chordTime,
+                .95
+            );
+
+
+            chordTime +=
+                1;
+
+        }
+    );
+
+
+    /*
+       Bass.
+    */
+
+    const bassNotes = [
+
+        NOTES.C4,
+        NOTES.G4,
+        NOTES.C4,
+        NOTES.F4,
+
+        NOTES.C4,
+        NOTES.G4,
+        NOTES.F4,
+        NOTES.G4
+
+    ];
+
+
+    let bassTime =
+        birthdayAudio
+        .currentTime +
+        .08;
+
+
+    bassNotes.forEach(
+        function(freq) {
+
+            playBass(
+                freq / 2,
+                bassTime,
+                .45
+            );
+
+
+            playBass(
+                freq / 2,
+                bassTime + .52,
+                .22
+            );
+
+
+            bassTime += 1;
+
+        }
+    );
+
+
+    /*
+       Energetic percussion.
+    */
+
+    let beatTime =
+        birthdayAudio
+        .currentTime +
+        .08;
+
+
+    for (
+        let i = 0;
+        i < 8;
+        i++
+    ) {
+
+        kick(beatTime);
+
+
+        if (
+            i % 2 === 1
+        ) {
+
+            clap(beatTime);
+
+        }
+
+
+        clap(
+            beatTime + .48
+        );
+
+
+        beatTime += 1;
+
+    }
+
+
+    /*
+       Repeat.
+    */
+
+    birthdayMusicTimer =
+        setTimeout(
+            playBirthdaySong,
+            8500
+        );
+
+}
+
+
+/* =========================================================
+   STOP MUSIC
+========================================================= */
+
+function stopBirthdayMusic() {
+
+    birthdayMusicPlaying =
+        false;
+
+
+    if (
+        birthdayMusicTimer
+    ) {
+
+        clearTimeout(
+            birthdayMusicTimer
+        );
+
+    }
+
+
+    if (
+        birthdayAudio
+    ) {
+
+        birthdayAudio
+        .close()
+        .catch(
+            function() {}
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+
